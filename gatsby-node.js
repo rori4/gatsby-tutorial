@@ -13,26 +13,24 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark {
+      allWordpressPost {
         nodes {
-          fields {
-            slug
-          }
+          slug
         }
       }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.nodes.forEach((node)=>{
-        createPage({
-            path: node.fields.slug,
-            component: path.resolve('./src/layouts/BlogpostLayout.js'),
-            context: {
-              slug: node.fields.slug
-            }
-        })
+    result.data.allWordpressPost.nodes.forEach(node => {
+      createPage({
+        path: node.slug,
+        component: path.resolve("./src/layouts/BlogpostLayout.js"),
+        context: {
+          slug: node.slug,
+        },
+      })
     })
   })
 }
