@@ -2,7 +2,7 @@ import React from "react"
 import { Card, Button } from "react-bootstrap"
 
 const Post = (props) => (
-  <div className="p-3">
+  <post className="p-3">
     <Card>
       <Card.Img variant="top" src={props.image} />
       <Card.Body>
@@ -11,7 +11,7 @@ const Post = (props) => (
         <Button variant="primary" href={props.readMore}>Read More...</Button>
       </Card.Body>
     </Card>
-  </div>
+  </post>
 )
 
 export default Post
