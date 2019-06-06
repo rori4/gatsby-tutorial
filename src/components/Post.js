@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap"
 const Post = (props) => (
   <post className="p-3">
     <Card>
-      <Card.Img variant="top" src={props.image} />
+      <Card.Img variant="top" alt={props.alt || "default"} src={props.image} />
       <Card.Body>
         <Card.Title dangerouslySetInnerHTML={{__html: props.title}}/>
         <Card.Text dangerouslySetInnerHTML={{__html: props.excerpt}}/>
