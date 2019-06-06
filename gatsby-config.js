@@ -11,6 +11,7 @@ module.exports = {
     description: "This is the description of our website",
     keywords: "gatsby, gatsbyjs project, gatsby bootstrap",
     image: '/static/gatsby.jpg',
+    siteUrl: 'http://localhost:8000/',
     url: 'https://www.gatsbyjs.org/'
   },
   plugins: [
@@ -26,10 +27,11 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: `codingsrc.com`,
-        protocol: `http`,
+        protocol: `https`,
         hostingWPCOM: false,
       },
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-robots-txt'
   ],
 }
