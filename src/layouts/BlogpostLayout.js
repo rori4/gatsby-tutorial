@@ -3,22 +3,24 @@ import { graphql } from "gatsby"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
-import innertext from "innertext";
+import innertext from "innertext"
 const BlogpostLayout = ({ data }) => {
   const post = data.wordpressPost
   return (
     <div>
-      <SEO 
+      <SEO
         title={innertext(post.title)}
         description={innertext(post.excerpt)}
         image={post.featured_media.source_url}
-        keywords={post.categories.map(res => res.name).join(', ')}
+        keywords={post.categories.map(res => res.name).join(", ")}
       />
       <Header />
-      <main className="container">
-        <div className="row justify-content-md-center">
-          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <main>
+        <div className="container">
+          <div className="row justify-content-md-center">
+            <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
         </div>
       </main>
       <Footer />
