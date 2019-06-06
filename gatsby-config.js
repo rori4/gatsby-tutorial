@@ -10,9 +10,9 @@ module.exports = {
     title: "Gatsby-Bootstrap",
     description: "This is the description of our website",
     keywords: "gatsby, gatsbyjs project, gatsby bootstrap",
-    image: '/static/gatsby.jpg',
-    siteUrl: 'http://localhost:8000/',
-    url: 'https://www.gatsbyjs.org/'
+    image: "/static/gatsby.jpg",
+    siteUrl: "http://localhost:8000/",
+    url: "https://www.gatsbyjs.org/",
   },
   plugins: [
     {
@@ -32,7 +32,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-robots-txt',
-    `gatsby-plugin-netlify`
+    "gatsby-plugin-robots-txt",
+    `gatsby-plugin-netlify`,
+    {
+      resolve: "gatsby-plugin-netlify-cache",
+      options: {
+        cachePublic: true,
+      },
+    },
   ],
 }
