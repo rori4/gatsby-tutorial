@@ -40,5 +40,17 @@ module.exports = {
         cachePublic: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS Bootstrap`,
+        short_name: `GatsbyJS Bootstrap`,
+        start_url: `/`,
+        background_color: `#F8F9FA`,
+        theme_color: `#FFFFFF`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`
   ],
 }
